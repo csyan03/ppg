@@ -17,8 +17,8 @@ app.post('/convert', async (req, res) => {
     const file = req.files.file;
     const format = req.body.format;
     // 将路径从 uploads/ 改为绝对路径
-const inputPath = `${process.env.HOME}/file-converter/uploads/${file.name}`;
-const outputPath = `${process.env.HOME}/file-converter/converted/converted.${format}`;
+const inputPath = `${process.env.HOME}/storage/shared/file-converter/uploads/${file.name}`;
+const outputPath = `${process.env.HOME}/storage/shared/file-converter/converted/converted.${format}`;
 
     // 保存上传文件
     await file.mv(inputPath);
